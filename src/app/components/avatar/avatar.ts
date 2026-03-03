@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AvatarComponent {
   nombre = signal<string>('Avatar');
+  colorNombre = signal<string>('#000000');
+  tamanoNombre = signal<number>(16);
   colorFondo = signal<string>('#fff');
   tamano = signal<number>(150);
   tieneLentes = signal<boolean>(false);
@@ -18,6 +20,16 @@ export class AvatarComponent {
   cambiarNombre(event: Event) {
     const input = event.target as HTMLInputElement;
     this.nombre.set(input.value);
+  }
+
+  cambiarColorNombre(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.colorNombre.set(input.value);
+  }
+
+  cambiarTamanoNombre(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.tamanoNombre.set(parseInt(input.value));
   }
 
   cambiarColor(event: Event) {

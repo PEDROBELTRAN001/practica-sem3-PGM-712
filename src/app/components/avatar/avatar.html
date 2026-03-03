@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Avatar</h2>
     <h3>Nombre: </h3>
-    <p>{{ nombre() }}</p>
+    <p [style.color]="colorNombre()" [style.font-size.px]="tamanoNombre()">{{ nombre() }}</p>
     <div class="canvas-avatar">
         <div class="cuerpo" [style.background-color]="colorFondo()" [style.width.px]="tamano()"
             [style.height.px]="tamano()">
@@ -27,11 +27,19 @@
             <input type="text" [value]="nombre()" (input)="cambiarNombre($event)">
         </label>
 
-        <label color>
+        <label> color del nombre:
+            <input type="color" [value]="colorNombre()" (input)="cambiarColorNombre($event)">
+        </label>
+
+        <label> tamaño del nombre:
+            <input type="range" min="10" max="100" [value]="tamanoNombre()" (input)="cambiarTamanoNombre($event)">
+        </label>
+
+        <label color> color de avatar:
             <input type="color" [value]="colorFondo()" (input)="cambiarColor($event)">
         </label>
 
-        <label Tamaño>
+        <label Tamaño>tamaño del avatar:
             <input type="range" min="100" max="300" [value]="tamano()" (input)="cambiarTamano($event)">
         </label>
         <button (click)="toggleLentes()">
