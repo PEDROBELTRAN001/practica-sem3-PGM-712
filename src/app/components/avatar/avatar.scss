@@ -5,12 +5,14 @@
     font-family: 'Segoe UI', sans-serif;
 
     .canvas-avatar {
+
         height: 350px;
         display: flex;
         align-items: center;
         justify-content: center;
 
         .cuerpo {
+
             border-radius: 50%;
             position: relative;
             transition: all 0.3s ease;

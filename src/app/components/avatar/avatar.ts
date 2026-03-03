@@ -16,6 +16,7 @@ export class AvatarComponent {
   tamano = signal<number>(150);
   tieneLentes = signal<boolean>(false);
   tipoExpresion = signal<number>(1);
+  girar = signal<number>(0);
 
   cambiarNombre(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -41,9 +42,13 @@ export class AvatarComponent {
     this.tamano.set(parseInt(input.value));
   }
   toggleLentes() {
-    this.tieneLentes.update(flag => !flag); //es una funcion que recibe el valor actual y devuelve el valor actual negado
+    this.tieneLentes.update(flag => !flag);
   }
   setExpresion(tipo: number) {
     this.tipoExpresion.set(tipo);
+  }
+  cambiargirar(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.girar.set(parseInt(input.value));
   }
 }
